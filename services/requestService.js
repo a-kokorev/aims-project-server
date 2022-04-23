@@ -1,13 +1,10 @@
 const axios = require('axios').default;
 const inquireService = require('./inquireService');
 
-// TODO: Create a config and move PAT to the config
-const token = '';
-
 const axiosConfig = () => ({
   headers: {
     'Accept': 'application/json',
-    'Authorization': `Basic ${Buffer.from(`:${token}`).toString('base64')}`,
+    'Authorization': `Basic ${Buffer.from(`:${process.env.ADO_PAT}`).toString('base64')}`,
   },
 });
 
